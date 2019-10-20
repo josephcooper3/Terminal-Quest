@@ -18,4 +18,6 @@ public abstract class Player {
         return this.healthPoints;
     }
 
+    public abstract String attack(Enemy target);
+
 }
