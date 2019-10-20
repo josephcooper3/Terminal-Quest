@@ -1,4 +1,4 @@
-package runner;
+package gameplay;
 
 import abilities.Axe;
 import abilities.Sword;
