@@ -1,10 +1,10 @@
 package beings;
 
-import abilities.IWeapon;
+import abilities.Weapon;
 
 public class Dwarf extends Fighter {
 
-    public Dwarf(String name, IWeapon weapon) {
+    public Dwarf(String name, Weapon weapon) {
         super(name, weapon, "Axe");
     }
 

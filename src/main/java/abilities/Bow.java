@@ -2,7 +2,7 @@ package abilities;
 
 import beings.Enemy;
 
-public class Bow implements IWeapon {
+public class Bow extends Weapon {
 
     private String type;
     private int damage;

@@ -13,7 +13,7 @@ public class Room {
 
     public Room(Player player) {
         this.player = player;
-        this.enemies = new ArrayList<Enemy>;
+        this.enemies = new ArrayList<Enemy>();
         this.cleared = false;
     }
 

@@ -1,13 +1,13 @@
 package beings;
 
-import abilities.IWeapon;
+import abilities.Weapon;
 
 public class Fighter extends Player {
 
-    private IWeapon weapon;
+    private Weapon weapon;
     private String skilledWith;
 
-    public Fighter(String name, IWeapon weapon, String skilledWith) {
+    public Fighter(String name, Weapon weapon, String skilledWith) {
         super(name);
         this.weapon = weapon;
         this.skilledWith = skilledWith;
@@ -25,7 +25,7 @@ public class Fighter extends Player {
         return this.weapon.attack(target, this.getMultiplier());
     }
 
-    public void changeWeapon(IWeapon newWeapon) {
+    public void changeWeapon(Weapon newWeapon) {
         this.weapon = newWeapon;
     }
 

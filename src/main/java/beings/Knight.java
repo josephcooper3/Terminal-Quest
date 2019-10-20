@@ -1,10 +1,10 @@
 package beings;
 
-import abilities.IWeapon;
+import abilities.Weapon;
 
 public class Knight extends Fighter {
 
-    public Knight(String name, IWeapon weapon) {
+    public Knight(String name, Weapon weapon) {
         super(name, weapon, "Sword");
     }
 
