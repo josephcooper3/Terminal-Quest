@@ -23,11 +23,11 @@ public class Battle {
         return enemy;
     }
 
-    public void tradeBlows() {
+    public String tradeBlows() {
         if (enemy instanceof IFirstStrike) {
             player.takeDamage(((IFirstStrike) enemy).firstStrike());
         }
-        player.attack(enemy);
+        return player.attack(enemy);
     }
 
     public boolean checkPlayerWins() {

@@ -1,11 +1,7 @@
 package gameplay;
 
 import abilities.Axe;
-import abilities.Sword;
-import beings.Dwarf;
-import beings.Knight;
-import beings.Player;
-import beings.Troll;
+import beings.*;
 
 import java.util.Scanner;
 
@@ -15,23 +11,29 @@ public class Runner {
 
         Scanner scanner = new Scanner(System.in);
 
-        Player player;
-        Axe axe = new Axe();
-        Sword sword = new Sword();
-        Troll troll = new Troll();
-
         System.out.println("Welcome to Terminal Quest! What is your name?");
 
         String playerName = scanner.next();
+        Axe weapon = new Axe();
+        Dwarf player = new Dwarf(playerName, weapon);
 
-        System.out.println("Would you like to play as a Knight or a Dwarf?");
+        System.out.println(String.format("Greetings, brave adventurer %s! You are playing as a Dwarf wielding a mighty %s.", playerName, weapon.getType()));
 
-        String playerClass = scanner.next();
+        System.out.println("A wild Imp appeared!");
 
-        if (playerClass == "Knight") {
-            player = new Knight(playerName, sword);
-        } else if (playerClass == "Dwarf") {
-            player = new Dwarf(playerName, axe);
+        Imp imp = new Imp();
+        Battle impBattle = new Battle(player, imp);
+
+        System.out.println(String.format("Attack the Imp with your %s?", weapon.getType()));
+
+        String input = scanner.next();
+
+        if (input.toLowerCase().contains("y")) {
+            System.out.println(impBattle.tradeBlows());
+        }
+
+        if (impBattle.checkPlayerWins() == true) {
+            System.out.println("You destroyed the foul Imp!");
         }
 
     }
