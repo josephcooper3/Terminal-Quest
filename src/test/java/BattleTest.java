@@ -1,4 +1,5 @@
 import abilities.Axe;
+import beings.Berserker;
 import beings.Dwarf;
 import beings.Troll;
 import gameplay.Battle;
@@ -37,6 +38,15 @@ public class BattleTest {
     public void canTradeBlows() {
         battle.tradeBlows();
         assertEquals(7,battle.getEnemy().getHealthPoints());
+    }
+
+    @Test
+    public void canTradeBlowsWithFirstStriker() {
+        Berserker berserker = new Berserker();
+        Battle berserkerBattle = new Battle(player, berserker);
+        berserkerBattle.tradeBlows();
+        assertEquals(8, player.getHealthPoints());
+        assertEquals(3, berserker.getHealthPoints());
     }
 
 }
