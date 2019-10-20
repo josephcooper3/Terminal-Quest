@@ -49,4 +49,10 @@ public class DwarfTest {
         assertEquals(8, troll.getHealthPoints());
     }
 
+    @Test
+    public void canTakeDamage() {
+        dwarf.takeDamage(1);
+        assertEquals(9, dwarf.getHealthPoints());
+    }
+
 }
