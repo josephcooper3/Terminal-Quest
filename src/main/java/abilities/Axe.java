@@ -8,7 +8,7 @@ public class Axe extends Weapon {
     private int damage;
 
     public Axe() {
-        this.type = "Axe";
+        super("Axe");
         this.damage = 2;
     }
 
@@ -21,7 +21,4 @@ public class Axe extends Weapon {
         return "Swish Thwack!";
     }
 
-    public String getType() {
-        return type;
-    }
 }

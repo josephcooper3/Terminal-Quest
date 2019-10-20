@@ -1,7 +1,6 @@
 package gameplay;
 
 import abilities.IFirstStrike;
-import beings.Dwarf;
 import beings.Enemy;
 import beings.Player;
 
@@ -31,18 +30,10 @@ public class Battle {
     }
 
     public boolean checkPlayerWins() {
-        if (player.getHealthPoints() > 0 & enemy.getHealthPoints() <= 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return player.getHealthPoints() > 0 & enemy.getHealthPoints() <= 0;
     }
 
     public boolean checkEnemyWins() {
-        if (enemy.getHealthPoints() > 0 & player.getHealthPoints() <= 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return enemy.getHealthPoints() > 0 & player.getHealthPoints() <= 0;
     }
 }

@@ -32,7 +32,7 @@ public class Runner {
             System.out.println(impBattle.tradeBlows());
         }
 
-        if (impBattle.checkPlayerWins() == true) {
+        if (impBattle.checkPlayerWins()) {
             System.out.println("You destroyed the foul Imp!");
         }
 

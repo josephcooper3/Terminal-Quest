@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class BattleTest {
 
@@ -56,7 +57,7 @@ public class BattleTest {
         trollBattle.tradeBlows();
         trollBattle.tradeBlows();
         trollBattle.tradeBlows();
-        assertEquals(true, trollBattle.checkPlayerWins());
+        assertTrue(trollBattle.checkPlayerWins());
     }
 
     @Test
@@ -70,7 +71,7 @@ public class BattleTest {
         berserkerBattle.tradeBlows();
         berserkerBattle.tradeBlows();
         berserkerBattle.tradeBlows();
-        assertEquals(true, berserkerBattle.checkEnemyWins());
+        assertTrue(berserkerBattle.checkEnemyWins());
     }
 
 }
