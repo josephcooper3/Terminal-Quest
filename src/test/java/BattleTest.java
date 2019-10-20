@@ -33,6 +33,10 @@ public class BattleTest {
         assertEquals(troll, battle.getEnemy());
     }
 
-
+    @Test
+    public void canTradeBlows() {
+        battle.tradeBlows();
+        assertEquals(7,battle.getEnemy().getHealthPoints());
+    }
 
 }

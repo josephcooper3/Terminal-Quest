@@ -1,5 +1,6 @@
 package gameplay;
 
+import abilities.IFirstStrike;
 import beings.Enemy;
 import beings.Player;
 
@@ -21,4 +22,10 @@ public class Battle {
         return enemy;
     }
 
+    public void tradeBlows() {
+        if (enemy instanceof IFirstStrike) {
+            player.takeDamage(((IFirstStrike) enemy).firstStrike());
+        }
+        player.attack(enemy);
+    }
 }
