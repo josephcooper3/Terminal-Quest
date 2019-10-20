@@ -1,37 +1,37 @@
 import abilities.Axe;
 import beings.Dwarf;
-import beings.Salmon;
+import beings.Imp;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class SalmonTest {
+public class ImpTest {
 
-    Salmon salmon;
+    Imp imp;
 
     @Before
     public void before() {
-        salmon = new Salmon();
+        imp = new Imp();
     }
 
     @Test
     public void startsWith1HealthPoint() {
-        assertEquals(1, salmon.getHealthPoints());
+        assertEquals(1, imp.getHealthPoints());
     }
 
     @Test
     public void cannotOverkill() {
-        salmon.takeDamage(2);
-        assertEquals(0, salmon.getHealthPoints());
+        imp.takeDamage(2);
+        assertEquals(0, imp.getHealthPoints());
     }
 
     @Test
     public void cannotDefend() {
         Axe myAxe = new Axe();
         Dwarf dwarf = new Dwarf("Gimli", myAxe);
-        dwarf.attack(salmon);
-        assertEquals(0, salmon.getHealthPoints());
+        dwarf.attack(imp);
+        assertEquals(0, imp.getHealthPoints());
     }
 
 }
