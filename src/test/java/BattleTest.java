@@ -1,4 +1,5 @@
 import abilities.Axe;
+import abilities.Bow;
 import beings.Berserker;
 import beings.Dwarf;
 import beings.Troll;
@@ -13,7 +14,7 @@ public class BattleTest {
     Axe myAxe;
     Dwarf player;
     Troll troll;
-    Battle battle;
+    Battle trollBattle;
 
 
     @Before
@@ -21,23 +22,23 @@ public class BattleTest {
         myAxe = new Axe();
         player = new Dwarf("Gimli", myAxe);
         troll = new Troll();
-        battle = new Battle(player, troll);
+        trollBattle = new Battle(player, troll);
     }
 
     @Test
     public void hasPlayer() {
-        assertEquals(player, battle.getPlayer());
+        assertEquals(player, trollBattle.getPlayer());
     }
 
     @Test
     public void hasEnemy() {
-        assertEquals(troll, battle.getEnemy());
+        assertEquals(troll, trollBattle.getEnemy());
     }
 
     @Test
     public void canTradeBlows() {
-        battle.tradeBlows();
-        assertEquals(7,battle.getEnemy().getHealthPoints());
+        trollBattle.tradeBlows();
+        assertEquals(7,trollBattle.getEnemy().getHealthPoints());
     }
 
     @Test
@@ -47,6 +48,29 @@ public class BattleTest {
         berserkerBattle.tradeBlows();
         assertEquals(8, player.getHealthPoints());
         assertEquals(3, berserker.getHealthPoints());
+    }
+
+    @Test
+    public void playerCanWin() {
+        trollBattle.tradeBlows();
+        trollBattle.tradeBlows();
+        trollBattle.tradeBlows();
+        trollBattle.tradeBlows();
+        assertEquals(true, trollBattle.checkPlayerWins());
+    }
+
+    @Test
+    public void enemyCanWin() {
+        Bow myBow = new Bow();
+        player.changeWeapon(myBow);
+        Berserker berserker = new Berserker();
+        Battle berserkerBattle = new Battle(player, berserker);
+        berserkerBattle.tradeBlows();
+        berserkerBattle.tradeBlows();
+        berserkerBattle.tradeBlows();
+        berserkerBattle.tradeBlows();
+        berserkerBattle.tradeBlows();
+        assertEquals(true, berserkerBattle.checkEnemyWins());
     }
 
 }
