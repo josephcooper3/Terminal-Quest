@@ -2,7 +2,7 @@ package abilities;
 
 import beings.Enemy;
 
-public class Bow extends Weapon {
+public class Bow extends Weapon implements IUnblockable {
 
     private String type;
     private int damage;
